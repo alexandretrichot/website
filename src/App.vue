@@ -15,7 +15,11 @@ export default {
 	]);
 	
 	window.addEventListener('load', () => {
-		document.getElementById('loading-wrapper').style.opacity = 0;
+		let loader = document.getElementById('loading-wrapper');
+		loader.style.opacity = 0;
+		setTimeout(() => {
+			loader.style.display = 'none';
+		}, 600);
 	}, true)
 
   }
