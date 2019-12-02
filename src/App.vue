@@ -1,28 +1,62 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+
+import Header from "./components/Header";
 
 export default {
-  name: 'app',
   components: {
-    HelloWorld
-  }
-}
-</script>
+    Header
+  },
+  mounted() {
+    this.$router.addRoutes([
+      { path: "/", component: Home },
+      { path: "*", component: NotFound }
+	]);
+	
+	window.addEventListener('load', () => {
+		document.getElementById('loading-wrapper').style.opacity = 0;
+	}, true)
 
+  }
+};
+</script>
+<template>
+  <div id="app" ref="app">
+    <Header id="header"></Header>
+    <router-view></router-view>
+  </div>
+</template>
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url("https://fonts.googleapis.com/css?family=Solway:700&display=swap");
+
+* {
+  font-family: "Solway", monospace, serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: black;
+}
+
+h1 {
+  font-size: 54px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  /*background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);*/
+  overflow: hidden;
+  z-index: 10;
 }
 </style>

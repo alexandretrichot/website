@@ -1,17 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>alexandretrichot.fr</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but alexandretrichot.fr doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" href="<%= BASE_URL %>favicon.ico">
+	<title>alexandretrichot.fr</title>
+</head>
+
+<body>
+	<div id="loading-wrapper">
+		<div id="loading-text">Chargement</div>
+	</div>
+	<style>
+		#loading-wrapper {
+			z-index: 100;
+			background: black;
+			position: fixed;
+			width: 100vw;
+			height: 100vh;
+			left: 0;
+			top: 0;
+			transition: opacity .6s;
+		}
+
+		#loading-text {
+			display: block;
+			position: absolute;
+			text-align: center;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+			color: white;
+			text-align: center;
+			font-family: monospace, serif;
+			font-size: 20px;
+			animation: glow .6s infinite alternate-reverse ease-in-out;
+		}
+
+		@keyframes glow {
+			0% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0.6;
+			}
+		}
+	</style>
+	<div id="app">
+	</div>
+</body>
+
 </html>
