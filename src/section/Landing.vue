@@ -1,23 +1,32 @@
 <script>
 import particles from "particles.js";
 import TypeIt from "typeit";
+import Parallax from "../components/Parallax";
 
 export default {
+  components: {
+    Parallax
+  },
   data() {
     return {
       images: [
-		  {
-			  image: require("../assets/images/bg1.jpg"),
-			  author: "Kevin Mueller",
-			  authorTag: "kevinmueller"
-		  },
-		  {
-			  image: require("../assets/images/bg2.jpg"),
-			  author: "Kevin sdfs df sdf Mueller",
-			  authorTag: "kevinmuellerdf sdf sdf "
-		  }
-	  ],
-	  imageId: 0
+        {
+          image: require("../assets/images/bg1.jpg"),
+          author: "Kevin Mueller",
+          authorTag: "kevinmueller"
+        },
+        {
+          image: require("../assets/images/bg2.jpg"),
+          author: "Kevin sdfs df sdf Mueller",
+          authorTag: "kevinmuellerdf sdf sdf "
+        },
+        {
+          image: "https://images.unsplash.com/photo-1575015642299-5b92fcbd0ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+          author: "Kevin sdfs df sdf Mueller",
+          authorTag: "kevinmuellerdf sdf sdf "
+        }
+      ],
+      imageId: 2
     };
   },
   mounted() {
@@ -142,17 +151,20 @@ export default {
       .pause(300)
       .type("Musicien")
       .pause(500)
-	  .go();
-	  
-	  this.imageId = this.images.length > 1 ? Math.round(Math.random(0, this.images.length - 1)) : 0;
+      .go();
 
+	//this.images[this.imageId].image = prompt("Enter the image", "https://images.unsplash.com/photo-1575015642299-5b92fcbd0ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")
+    this.imageId = this.images.length > 1 ? Math.round(Math.random(0, this.images.length - 1)) : 0;
   }
 };
 </script>
 <template>
   <section>
     <div class="background">
-      <img class="backimg" :src="images[imageId].image" alt="Background image" />
+      <parallax :speed="2">
+        <img ref="backimg" class="backimg" :src="images[imageId].image" alt="Background image" />
+        <div class="backlayer"></div>
+      </parallax>
     </div>
     <div id="particles" class="main">
       <div class="box">
@@ -177,7 +189,9 @@ export default {
               <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z" />
             </svg>
           </span>
-          <span style="display:inline-block;padding:2px 3px">{{ "Photo par " + images[imageId].author }}</span>
+          <span
+            style="display:inline-block;padding:2px 3px"
+          >{{ "Photo par " + images[imageId].author }}</span>
         </a>
       </div>
     </div>
@@ -190,7 +204,9 @@ section {
 }
 
 .background {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -198,9 +214,20 @@ section {
 
 .backimg {
   object-fit: cover;
+  object-position: center;
   height: 100%;
   width: 100%;
-  filter: blur(2px);
+  filter: blur(0px);
+}
+
+.backlayer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+  /*background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);*/
 }
 
 .main {
@@ -223,6 +250,8 @@ section {
   right: 0;
   bottom: 0;
   margin: 12px;
+  transform-origin: 100% 100%;
+  transform: rotate(-90deg) translateX(100%);
 }
 
 .credits a {

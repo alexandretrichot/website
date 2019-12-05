@@ -1,5 +1,6 @@
 <script>
 import Home from "./pages/Home";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 import Header from "./components/Header";
@@ -10,7 +11,8 @@ export default {
   },
   mounted() {
     this.$router.addRoutes([
-      { path: "/", component: Home },
+	  { path: "/", component: Home },
+	  { path: "/about", component: About},
       { path: "*", component: NotFound }
 	]);
 	
@@ -28,6 +30,7 @@ export default {
 <template>
   <div id="app" ref="app">
     <Header id="header"></Header>
+	<div style=" width: 200vw "></div>
     <router-view></router-view>
   </div>
 </template>
@@ -42,6 +45,7 @@ export default {
 body {
   margin: 0;
   background: black;
+  overflow-x: hidden;
 }
 
 h1 {

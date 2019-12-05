@@ -10,6 +10,11 @@ Vue.config.productionTip = false;
 
 const router = new VueRouter();
 
+router.beforeEach((to, from, next) => {
+	window.scrollTo(0, 0);
+	next();
+});
+
 new Vue({
 	router: router,
 	el: '#app',
