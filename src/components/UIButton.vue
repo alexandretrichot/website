@@ -17,6 +17,8 @@ button {
 	padding: 6px 12px;
 	margin: 200px;
 	transition: background .2s, color .2s;
+	outline: none;
+	cursor: pointer;
 }
 
 @media (hover: hover) {

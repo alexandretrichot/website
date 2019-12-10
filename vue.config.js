@@ -1,4 +1,9 @@
+const configureAPI = require('./src/server/configure');
+
 module.exports = {
 	runtimeCompiler: true,
-	lintOnSave: false
+	lintOnSave: false,
+	devServer: {
+		before: configureAPI
+	}
 }

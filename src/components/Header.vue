@@ -8,7 +8,7 @@ export default {};
     </div>
     <div class="right">
       <router-link class="link" to="/about">/à propos</router-link>
-      <router-link class="link" to="/"></router-link>
+      <router-link class="link" to="/contact">/contact</router-link>
     </div>
   </nav>
 </template>

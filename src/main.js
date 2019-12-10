@@ -8,7 +8,9 @@ Vue.use(VueAnime);
 
 Vue.config.productionTip = false;
 
-const router = new VueRouter();
+const router = new VueRouter({
+	mode: 'history'
+});
 
 router.beforeEach((to, from, next) => {
 	window.scrollTo(0, 0);
@@ -16,8 +18,8 @@ router.beforeEach((to, from, next) => {
 });
 
 new Vue({
-	router: router,
-	el: '#app',
-	template: '<App/>',
-	components: { App }
+    router: router,
+    el: '#app',
+    template: '<App/>',
+    components: { App }
 }).$mount('#app');
