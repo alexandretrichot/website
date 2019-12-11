@@ -1,5 +1,4 @@
 <script>
-import UIButton from "../components/UIButton";
 import Landing from "../section/Landing";
 import Artist from "../section/Artist";
 

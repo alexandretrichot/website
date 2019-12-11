@@ -1,37 +1,20 @@
 <script>
-import UIButton from "../components/UIButton";
+import Sender from "../components/Sender";
 
 export default {
   components: {
-    UIButton
-  },
-  methods: {
-    sendmail: function() {
-      let xhr = new XMLHttpRequest();
-
-      let formData = new FormData();
-	  formData.append("email", "corinne.trichot55@gmail.com");
-	  formData.append("name", "Corinne Trichot");
-	  formData.append("subject", "Hello !");
-	  formData.append("text", "YO YO YO !!");
-
-      xhr.open("POST", "api/sendmail", true);
-      xhr.onload = (e) => {
-        alert(xhr.response);
-      };
-
-      xhr.onerror = e => {
-        alert("Un problème est survenu durant l'envoi au serveur.");
-        console.err("error", e);
-      };
-	  xhr.send(formData);
-	  console.log(xhr);
-    }
+    Sender
   }
 };
 </script>
 <template>
-  <UIButton @click.native="sendmail">Send mail !</UIButton>
+  <div class="main">
+    <Sender />
+  </div>
 </template>
 <style scoped>
+.main {
+  margin: 70px auto;
+  max-width: 600px;
+}
 </style>

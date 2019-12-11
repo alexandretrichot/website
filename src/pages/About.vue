@@ -9,7 +9,7 @@ export default {
 <template>
   <section>
     <Parallax class="background" :speed="2">
-      <img class="backimg" src="../assets/images/profile.png" alt="Background image" />
+      <img class="backimg" src="../assets/images/silou.png" alt="Background image" />
     </Parallax>
 	<div class="main">
 		<h1>À propos!</h1>
