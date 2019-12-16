@@ -10,7 +10,7 @@ export default {
 };
 </script>
 <template>
-  <div id="app">
+  <div>
     <Landing></Landing>
 	<Artist></Artist>
   </div>
