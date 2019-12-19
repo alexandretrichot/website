@@ -1,5 +1,5 @@
 <script>
-import Sender from "./Sender";
+import Sender from "~/components/Sender";
 
 export default {
   components: {

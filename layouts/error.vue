@@ -1,11 +1,15 @@
 <script>
-export default {};
+export default {
+  props: ["error"],
+  layout: "default"
+};
 </script>
 <template>
   <div class="container">
     <div class="center">
-      <h1>Ho ho, on s'est perdu ?</h1>
-      <router-link class="button" to="/">Se reconnecter à la nature</router-link>
+      <h1 v-if="error.statusCode === 404">Page non trouvée</h1>
+      <h1 v-else>Une erreur s'est produite</h1>
+      <nuxt-link class="button" to="/">Revenir à l'accueil</nuxt-link>
     </div>
   </div>
 </template>

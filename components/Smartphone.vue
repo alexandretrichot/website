@@ -1,5 +1,4 @@
 <script>
-import Unsplash from "unsplash-js";
 
 export default {
   name: "Smartphone",

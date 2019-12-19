@@ -1,12 +1,6 @@
 <script>
-import Home from "./pages/Home";
-import Portfolio from "./pages/Portfolio";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
-
-import Header from "./components/Header";
-import SendHelper from "./components/SendHelper";
+import Header from "~/components/Header";
+import SendHelper from "~/components/SendHelper";
 
 export default {
   components: {
@@ -14,14 +8,6 @@ export default {
     SendHelper
   },
   mounted() {
-    this.$router.addRoutes([
-      { path: "/", component: Home },
-	  { path: "/portfolio", component: Portfolio },
-      { path: "/about", component: About },
-      { path: "/contact", component: Contact },
-      { path: "*", component: NotFound }
-	]);
-
     window.addEventListener(
       "load",
       () => {
@@ -35,16 +21,16 @@ export default {
     );
   },
   computed: {
-	  contactVisibility() {
-		  return this.$route.path != '/contact';
-	  }
+    contactVisibility() {
+      return this.$route.path != "/contact";
+    }
   }
 };
 </script>
 <template>
   <div id="app" ref="app">
     <Header id="header"></Header>
-    <router-view></router-view>
+    <nuxt />
     <SendHelper v-if="contactVisibility" class="helper" />
   </div>
 </template>

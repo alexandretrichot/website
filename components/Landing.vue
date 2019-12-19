@@ -1,7 +1,7 @@
 <script>
 import particles from "particles.js";
 import TypeIt from "typeit";
-import Parallax from "../components/Parallax";
+import Parallax from "~/components/Parallax";
 
 export default {
   components: {

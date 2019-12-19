@@ -1,5 +1,5 @@
 <script>
-import Parallax from "../components/Parallax";
+import Parallax from "~/components/Parallax";
 export default {
   components: {
     Parallax
