@@ -1,10 +1,6 @@
 <script>
 export default {
-  components: {},
-  name: "artist",
-  data() {
-    return {};
-  },
+  name: "Portfolio",
   mounted() {
     this.$anime({
       targets: this.$refs.morphing,
@@ -13,46 +9,21 @@ export default {
       loop: true,
       duration: 4000,
       direction: "alternate",
-      easing: "linear"
-    });
-    this.$anime({
-      targets: this.$refs.morphing,
-      translateX: 40,
-      loop: true,
-      duration: 3200,
-      direction: "alternate",
-      easing: "linear"
-    });
-    this.$anime({
-      targets: this.$refs.morphing,
-      translateY: 10,
-      loop: true,
-      duration: 2200,
-      direction: "alternate",
-      easing: "linear"
+      easing: "easeInOutSine"
     });
   }
 };
 </script>
 <template>
   <section>
-    <!-- <svg class="morph" viewBox="0 0 1000 1000">
-      <clipPath id="clip-path">
+    <div class="morph-wrap">
+      <svg class="morph" width="1400" height="770" viewBox="0 0 1400 770">
         <path
           ref="morphing"
           d="M 262.9,252.2 C 210.1,338.2 212.6,487.6 288.8,553.9 372.2,626.5 511.2,517.8 620.3,536.3 750.6,558.4 860.3,723 987.3,686.5 1089,657.3 1168,534.7 1173,429.2 1178,313.7 1096,189.1 995.1,130.7 852.1,47.07 658.8,78.95 498.1,119.2 410.7,141.1 322.6,154.8 262.9,252.2 Z"
         />
-      </clipPath>
-      <image
-        clip-path="url(#clip-path)"
-        xlink:href="../assets/images/music.jpg"
-        src="../assets/images/music.jpg"
-        alt="Image"
-        width="1000px"
-        height="1000px"
-      />
-    </svg>-->
-
+      </svg>
+    </div>
     <div class="content-wrap">
       <div class="content content--layout content--layout-1">
         <img class="content__img" src="../assets/images/music.jpg" alt="Some image" />
@@ -101,11 +72,32 @@ export default {
   </section>
 </template>
 <style scoped>
+.morph-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.morph {
+  position: relative;
+  height: 100%;
+  fill: yellow;
+  flex: none;
+}
+
 section {
   position: relative;
   background: black;
   overflow: hidden;
   color: white;
+  text-shadow: 0 0 5px black;
 }
 
 .content-wrap {
@@ -148,18 +140,18 @@ section {
 }
 
 .content--layout-2 .content__img {
-    grid-column: 3 / 5;
-    grid-row: 1 / 3;
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
 }
 
 .content--layout-3 .content__img {
-    grid-column: 1 / 3;
-    grid-row: 1 / 3;
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
 }
 
 .content--layout-4 .content__img {
-    grid-column: 2 / 4;
-    grid-row: 1 / 3;
+  grid-column: 2 / 4;
+  grid-row: 1 / 3;
 }
 
 .content__img {
@@ -211,16 +203,10 @@ img {
   z-index: 10;
   padding: 0 1em 0.15em;
 }
+
 a {
   text-decoration: none;
   color: var(--link-color);
   outline: none;
 }
-
-/* .morph {
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  right: 0vw;
-} */
 </style>

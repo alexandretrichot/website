@@ -1,5 +1,6 @@
 <script>
 import Home from "./pages/Home";
+import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -15,6 +16,7 @@ export default {
   mounted() {
     this.$router.addRoutes([
       { path: "/", component: Home },
+	  { path: "/portfolio", component: Portfolio },
       { path: "/about", component: About },
       { path: "/contact", component: Contact },
       { path: "*", component: NotFound }
@@ -74,10 +76,10 @@ h2 {
   left: 0;
   right: 0;
   height: 50px;
-  /*background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);*/
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
   overflow: hidden;
-  z-index: 10;
+  z-index: 100;
 }
 
 .helper {
