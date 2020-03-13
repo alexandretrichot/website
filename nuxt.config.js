@@ -1,5 +1,5 @@
 
-module.exports = {
+export default {
 	mode: 'spa',
 	head: {
 		title: process.env.npm_package_name || '',
@@ -21,7 +21,11 @@ module.exports = {
 	buildModules: [
 	],
 	modules: [
+		'@nuxtjs/axios',
+		'@nuxtjs/pwa',
 	],
+	axios: {
+	},
 	build: {
 		extend(config, ctx) {
 		}
