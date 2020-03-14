@@ -14,19 +14,9 @@ export default {
           image: require("../assets/images/bg1.jpg"),
           author: "Kevin Mueller",
           authorTag: "kevinmueller"
-        },
-        {
-          image: require("../assets/images/bg2.jpg"),
-          author: "Kevin sdfs df sdf Mueller",
-          authorTag: "kevinmuellerdf sdf sdf "
-        },
-        {
-          image: "https://images.unsplash.com/photo-1575015642299-5b92fcbd0ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-          author: "Kevin sdfs df sdf Mueller",
-          authorTag: "kevinmuellerdf sdf sdf "
         }
       ],
-      imageId: 2
+      imageId: 0
     };
   },
   mounted() {
@@ -152,9 +142,6 @@ export default {
       .type("Musicien")
       .pause(500)
       .go();
-
-	//this.images[this.imageId].image = prompt("Enter the image", "https://images.unsplash.com/photo-1575015642299-5b92fcbd0ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80")
-    this.imageId = this.images.length > 1 ? Math.round(Math.random(0, this.images.length - 1)) : 0;
   }
 };
 </script>
@@ -172,12 +159,13 @@ export default {
         <h2>
           <span id="type"></span>
         </h2>
+		<a class="button big outline" href="mailto:contact@alexandretrichot.fr">Contact</a>
       </div>
       <div class="credits">
         <a
           :href="'https://unsplash.com/@' + images[imageId].authorTag"
           target="_blank"
-          title="Voir Kevin Mueller sur Unsplash"
+          :title="'Voir ' + images[imageId].author + ' sur Unsplash'"
         >
           <span style="display:inline-block;padding:2px 3px">
             <svg

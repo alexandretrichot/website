@@ -26,6 +26,9 @@ export default {
 	],
 	axios: {
 	},
+	pageTransition: {
+		name: "fade"
+	},
 	build: {
 		extend(config, ctx) {
 		}

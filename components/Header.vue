@@ -8,8 +8,6 @@ export default {};
     </div>
     <div class="right">
       <router-link class="link" to="/portfolio">/projets</router-link>
-      <!-- <router-link class="link" to="/about">/à propos</router-link> -->
-      <router-link class="link" to="/contact">/contact</router-link>
     </div>
   </nav>
 </template>
@@ -29,7 +27,7 @@ nav {
 
 .link {
   display: block;
-  color: #ddd;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
