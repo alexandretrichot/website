@@ -1,0 +1,90 @@
+/* RESET */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  position: relative;
+}
+
+body {
+  font-size: 16px;
+}
+
+/* SPACING */
+
+.m {
+  margin: $gap;
+}
+
+.p {
+  padding: $gap;
+}
+
+.lm {
+  margin: $gap*2;
+}
+
+.lp {
+  padding: $gap*2;
+}
+
+.hm {
+  margin-top: $gap;
+  margin-bottom: $gap;
+}
+
+.hp {
+  padding-top: $gap;
+  padding-bottom: $gap;
+}
+
+/* UI COMPONENTS */
+
+.button {
+  display: inline-block;
+  border: solid $acColor 2px;
+  background: $acColor;
+  color: $textOnAccent;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: $gap/2 $gap;
+  border-radius: 6px;
+  transition: color 0.2s, background-color 0.2s;
+
+  &.big {
+    font-size: 2rem;
+  }
+
+  &.outline {
+    background: none;
+    color: $acColor;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background: $acColor;
+      color: $bgColor;
+    }
+
+    &.outline:hover {
+      background: $acColor;
+      color: $bgColor;
+    }
+  }
+}
+
+
+
+/* Grid */
+
+.grid {
+
+	
+
+	.grid-child {
+
+	}
+}

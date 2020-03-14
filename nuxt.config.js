@@ -23,7 +23,14 @@ export default {
 	modules: [
 		'@nuxtjs/axios',
 		'@nuxtjs/pwa',
+		'@nuxtjs/style-resources',
 	],
+	styleResources: {
+		scss: [
+			'./assets/scss/_vars.scss',
+			'./assets/scss/main.scss'
+		]
+	},
 	axios: {
 	},
 	pageTransition: {

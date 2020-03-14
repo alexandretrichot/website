@@ -13,7 +13,7 @@ export default {
     </div>
   </div>
 </template>
-<style scoped>
+<style lang="scss" scoped>
 .container {
   display: flex;
   justify-content: center;
@@ -26,26 +26,6 @@ export default {
 }
 
 h1 {
-  color: #ffaf1a;
-}
-
-.button {
-  border: solid #ffaf1a 2px;
-  background: #200002;
-  color: #ffaf1a;
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  outline: none;
-  transition: all 0.2s;
-}
-
-@media (hover: hover) {
-  .button:hover {
-    background: #ffaf1a;
-    color: #200002;
-  }
+  color: $acColor;
 }
 </style>
