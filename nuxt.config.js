@@ -18,8 +18,6 @@ export default {
 	plugins: [
 		"~/plugins/Anime.js"
 	],
-	buildModules: [
-	],
 	modules: [
 		'@nuxtjs/axios',
 		'@nuxtjs/pwa',
@@ -31,13 +29,7 @@ export default {
 			'./assets/scss/main.scss'
 		]
 	},
-	axios: {
-	},
 	pageTransition: {
 		name: "fade"
-	},
-	build: {
-		extend(config, ctx) {
-		}
 	}
 }

@@ -7,7 +7,7 @@ export default {};
       <router-link class="link" to="/">Alexandre TRICHOT</router-link>
     </div>
     <div class="right">
-      <router-link class="link" to="/portfolio">/projets</router-link>
+      <!-- <router-link class="link" to="/portfolio">/projets</router-link> -->
     </div>
   </nav>
 </template>
