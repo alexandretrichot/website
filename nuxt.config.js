@@ -32,12 +32,6 @@ export default {
 			'~/assets/scss/_vars.scss',
 		]
 	},
-	css: [
-		'~/assets/scss/main.scss',
-		'~/assets/scss/editor.scss',
-	],
-	axios: {
-	},
 	pageTransition: {
 		name: "fade"
 	}
