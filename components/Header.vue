@@ -3,12 +3,9 @@ export default {};
 </script>
 <template>
   <nav>
-    <div class="left">
+    <!-- <div class="left">
       <router-link class="link" to="/">Alexandre TRICHOT</router-link>
-    </div>
-    <div class="right">
-      <!-- <router-link class="link" to="/portfolio">/projets</router-link> -->
-    </div>
+    </div> -->
   </nav>
 </template>
 <style scoped>

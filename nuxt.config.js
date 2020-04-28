@@ -9,11 +9,13 @@ export default {
 			{ hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
 		],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+			{ rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Solway:700&display=swap"}
 		]
 	},
 	loading: { color: '#fff' },
 	css: [
+		'~/assets/scss/main.scss',
 	],
 	plugins: [
 		"~/plugins/Anime.js"
@@ -25,8 +27,7 @@ export default {
 	],
 	styleResources: {
 		scss: [
-			'./assets/scss/_vars.scss',
-			'./assets/scss/main.scss'
+			'~/assets/scss/_vars.scss',
 		]
 	},
 	pageTransition: {

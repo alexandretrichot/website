@@ -26,12 +26,12 @@ export default {
   <section class="landing">
     <Background />
     <div class="main">
-      <div class="box">
+      <div class="box m">
         <h1>Alexandre Trichot</h1>
-        <h2>
+        <h2 class="hm">
           <span id="type"></span>
         </h2>
-		<!-- <a class="button big outline lm" href="mailto:contact@alexandretrichot.fr">Contact</a> -->
+        <!-- <a class="button big outline lm" href="mailto:contact@alexandretrichot.fr">Contact</a> -->
       </div>
     </div>
   </section>
@@ -47,12 +47,12 @@ export default {
 .main {
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .box {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   color: white;
   text-align: center;
   width: 100%;

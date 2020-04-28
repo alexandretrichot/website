@@ -13,8 +13,7 @@ export default {
     <nuxt />
   </div>
 </template>
-<style>
-@import url("https://fonts.googleapis.com/css?family=Solway:700&display=swap");
+<style lang="scss" scoped>
 
 .fade-enter-active,
 .fade-leave-active {
@@ -22,25 +21,6 @@ export default {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
-}
-
-* {
-  font-family: "Solway", monospace, serif;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: black;
-  overflow-x: hidden;
-}
-
-h1 {
-  font-size: 54px;
-}
-
-h2 {
-  font-size: 40px;
 }
 
 #header {
@@ -53,12 +33,5 @@ h2 {
   backdrop-filter: blur(5px); */
   overflow: hidden;
   z-index: 100;
-}
-
-.helper {
-  z-index: 30;
-  position: fixed;
-  bottom: 0;
-  left: 0;
 }
 </style>
