@@ -21,7 +21,6 @@ export default {};
 <style lang="scss" scoped>
 .overview {
   overflow: hidden;
-  background-color: $bgColor;
 
   .flex {
     margin: 4rem 2rem;
