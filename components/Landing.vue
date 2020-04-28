@@ -28,9 +28,9 @@ export default {
     <div class="main">
       <div class="box m">
         <h1>Alexandre Trichot</h1>
-        <h2 class="hm">
+        <p class="hm">
           <span id="type"></span>
-        </h2>
+        </p>
         <!-- <a class="button big outline lm" href="mailto:contact@alexandretrichot.fr">Contact</a> -->
       </div>
     </div>
@@ -56,5 +56,13 @@ export default {
   color: white;
   text-align: center;
   width: 100%;
+
+  h1 {
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
 }
 </style>
