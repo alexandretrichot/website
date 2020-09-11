@@ -2,6 +2,8 @@
 import TypeIt from "typeit";
 import Background from "~/components/Background";
 
+//new TypeIt()
+
 export default {
   components: {
     Background
@@ -14,8 +16,23 @@ export default {
       .pause(1000)
       .type(" Freelance")
       .pause(500)
-      .delete()
+      .delete(9)
       .pause(300)
+
+      .type("Fullstack")
+      .pause(500)
+      .delete(13)
+      .pause(300)
+
+      .type("Vue.js")
+      .pause(600)
+      .delete(6)
+      .pause(100)
+      .type("Wordpress")
+      .pause(300)
+      .delete()
+      .pause(200)
+      
       .type("Musicien")
       .pause(500)
       .go();
@@ -27,7 +44,7 @@ export default {
     <Background />
     <div class="main">
       <div class="box m">
-        <h1>Alexandre Trichot</h1>
+        <h1>Alexandre TRICHOT</h1>
         <p class="hm">
           <span id="type"></span>
         </p>
