@@ -18,6 +18,7 @@ export default {
 	],
 	plugins: [
 		{ src: "~/plugins/cursor.js", ssr: false },
+		{ src: "~/plugins/player", ssr: false }
 	],
 	modules: [
 		'@nuxtjs/pwa',
