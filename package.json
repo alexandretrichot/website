@@ -12,21 +12,8 @@
     "deploy": "npm run build && firebase deploy"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-brands-svg-icons": "^5.14.0",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@fortawesome/vue-fontawesome": "^0.1.10",
-    "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/pwa": "^3.0.2",
-    "@nuxtjs/style-resources": "^1.0.0",
-    "cross-env": "^5.2.0",
-    "express": "^4.16.4",
-    "express-formidable": "^1.2.0",
-    "nodemailer": "^6.4.11",
-    "nuxt": "^2.14.5",
-    "particles.js": "^2.0.0",
-    "typeit": "^6.1.1",
-    "vue-animejs": "^2.1.1"
+    "nuxt": "^2.14.6"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",

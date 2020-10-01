@@ -1,4 +1,3 @@
-
 export default {
 	mode: 'spa',
 	head: {
@@ -16,23 +15,14 @@ export default {
 	loading: { color: '#fff' },
 	css: [
 		'~/assets/scss/main.scss',
-		'@fortawesome/fontawesome-svg-core/styles.css'
 	],
 	plugins: [
-		'~/plugins/fontawesome',
-		"~/plugins/Anime.js"
 	],
 	modules: [
-		'@nuxtjs/axios',
 		'@nuxtjs/pwa',
-		'@nuxtjs/style-resources',
 	],
-	styleResources: {
-		scss: [
-			'~/assets/scss/_vars.scss',
-		]
-	},
 	pageTransition: {
+		mode: 'out-in',
 		name: "fade"
 	}
 }
