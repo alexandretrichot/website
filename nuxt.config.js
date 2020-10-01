@@ -17,6 +17,7 @@ export default {
 		'~/assets/scss/main.scss',
 	],
 	plugins: [
+		{ src: "~/plugins/cursor.js", ssr: false },
 	],
 	modules: [
 		'@nuxtjs/pwa',
