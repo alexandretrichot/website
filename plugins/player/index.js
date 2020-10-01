@@ -5,4 +5,4 @@ Vue.use({
   install(vueInst) {
     vueInst.prototype.$player = new Player();
   }
-})
+});

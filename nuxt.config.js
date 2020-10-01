@@ -1,5 +1,5 @@
 export default {
-	mode: 'spa',
+	ssr: false,
 	head: {
 		title: process.env.npm_package_name || '',
 		meta: [
@@ -26,5 +26,16 @@ export default {
 	pageTransition: {
 		mode: 'out-in',
 		name: "fade"
+	},
+	build: {
+		extend(config, ctx) {
+			config.module.rules.push({
+				test: /\.(ogg|mp3|wav|mpe?g)$/i,
+				loader: 'file-loader',
+				options: {
+					name: '[path][name].[ext]'
+				}
+			})
+		}
 	}
 }
