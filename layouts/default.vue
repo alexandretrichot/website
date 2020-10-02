@@ -3,12 +3,12 @@ export default {
   data() {
     return {
       playerReady: false,
-      playing: false,
+      muted: true,
     };
   },
   mounted() {
     this.$player.on("ready", (r) => (this.playerReady = r));
-    this.$player.on("playing", (p) => (this.playing = p));
+    this.$player.on("muted", (m) => (this.muted = m));
   },
   methods: {
     toggleSounds() {
@@ -21,7 +21,7 @@ export default {
   <div id="app">
     <button
       class="btn"
-      :class="{ playing: playing }"
+      :class="{ muted: muted }"
       @click="toggleSounds"
       :disabled="!playerReady"
     >
@@ -31,7 +31,7 @@ export default {
   </div>
 </template>
 <style lang="scss">
-.playing {
-  background-color: green;
+.muted {
+  background-color: black;
 }
 </style>

@@ -15,6 +15,13 @@ export default class Player extends EventEmitter {
     /* vars */
     this.ready = false;
     this.playing = false;
+    this.muted = true;
+
+    /* mixer */
+    this.mixer = this.context.createGain();
+
+    this.mixer.gain.setValueAtTime(0.001, this.context.currentTime);
+    this.mixer.connect(this.context.destination);
 
     this.loadSounds();
   }
@@ -26,39 +33,33 @@ export default class Player extends EventEmitter {
     this.emit('ready', this.ready);
   }
 
-  play() {
+  start() {
     this.playing = true;
     this.emit('playing', this.playing);
 
-    const background = new AudioBufferSourceNode(this.context);
-    background.buffer = this.buffers.background;
-    background.loopStart = 4;
-    background.loopEnd = 4 * 5;
-    background.loop = true;
+    this.background = new AudioBufferSourceNode(this.context);
+    this.background.buffer = this.buffers.background;
+    this.background.loopStart = 4;
+    this.background.loopEnd = 4 * 5;
+    this.background.loop = true;
 
-    background.connect(this.context.destination);
-    background.start();
+    this.background.connect(this.mixer);
 
-    this.sounds.push(background);
-  }
-
-  stop() {
-    this.sounds.forEach(s => {
-      s.stop();
-      s.disconnect();
-    });
-
-    this.sounds = [];
-
-    this.playing = false;
-    this.emit('playing', this.playing);
+    this.background.start();
   }
 
   toggle() {
-    if (this.playing) {
-      this.stop();
+    if (this.muted) {
+      if (!this.playing) {
+        this.start();
+      }
+      /* unmute fade */
+      this.mixer.gain.setTargetAtTime(1, this.context.currentTime, 3);
     } else {
-      this.play();
+      this.mixer.gain.setTargetAtTime(0.001, this.context.currentTime, 0.5);
     }
+
+    this.muted = !this.muted;
+    this.emit('muted', this.muted);
   }
 }
