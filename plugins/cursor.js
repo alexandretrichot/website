@@ -1,5 +1,5 @@
-window.addEventListener('mousemove', move);
-document.addEventListener('mouseleave', hide);
+/* window.addEventListener('mousemove', move);
+document.addEventListener('mouseleave', hide); */
 
 const cursor = document.createElement('div');
 cursor.classList.add('cursor');

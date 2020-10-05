@@ -1,37 +1,38 @@
 <script>
+import SoundToggle from "../components/SoundToggle";
+
 export default {
-  data() {
-    return {
-      playerReady: false,
-      muted: true,
-    };
-  },
-  mounted() {
-    this.$player.on("ready", (r) => (this.playerReady = r));
-    this.$player.on("muted", (m) => (this.muted = m));
-  },
-  methods: {
-    toggleSounds() {
-      this.$player.toggle();
-    },
+  components: {
+    "sound-toggle": SoundToggle,
   },
 };
 </script>
 <template>
   <div id="app">
-    <button
-      class="btn"
-      :class="{ muted: muted }"
-      @click="toggleSounds"
-      :disabled="!playerReady"
-    >
-      Play
-    </button>
+    <nav>
+      <div class="left"></div>
+      <div class="right">
+      </div>
+    </nav>
+    <sound-toggle />
     <nuxt />
   </div>
 </template>
 <style lang="scss">
-.muted {
-  background-color: black;
+nav {
+  display: flex;
+  justify-content: space-between;
+
+  height: 3rem;
+  background-color: red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.left,
+.right {
+  display: flex;
 }
 </style>
