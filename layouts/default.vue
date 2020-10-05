@@ -12,6 +12,7 @@ export default {
     <nav>
       <div class="left"></div>
       <div class="right">
+        <font-awesome-icon class="icon" icon="bars" />
       </div>
     </nav>
     <sound-toggle />
@@ -23,16 +24,23 @@ nav {
   display: flex;
   justify-content: space-between;
 
-  height: 3rem;
-  background-color: red;
+  height: 4rem;
+  backdrop-filter: blur(5px);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-}
+  background: red;
 
-.left,
-.right {
-  display: flex;
+  .left,
+  .right {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
 }
 </style>

@@ -2,12 +2,15 @@
 export default {
   data() {
     return {
-      playerReady: false,
-      active: false,
+      playerReady: this.$player.ready,
+      active: !this.$player.muted,
     };
   },
   mounted() {
-    this.$player.on("ready", (r) => (this.playerReady = r));
+    this.$player.on("ready", (r) => {
+      console.log('hey !!!');
+      this.playerReady = r;
+    });
     this.$player.on("muted", (m) => (this.active = !m));
   },
   methods: {

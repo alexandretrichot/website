@@ -15,10 +15,12 @@ export default {
 	loading: { color: '#fff' },
 	css: [
 		'~/assets/scss/main.scss',
+		'@fortawesome/fontawesome-svg-core/styles.css'
 	],
 	plugins: [
 		{ src: "~/plugins/cursor.js", ssr: false },
-		{ src: "~/plugins/player", ssr: false }
+		{ src: "~/plugins/player", ssr: false },
+		"~/plugins/fontawesome"
 	],
 	modules: [
 		'@nuxtjs/pwa',

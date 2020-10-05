@@ -1,10 +1,14 @@
 import EventEmitter from 'eventemitter3';
-import backgroundSound from '../../assets/sounds/background.wav';
+import backgroundSound from '../../assets/sounds/background.mp3';
+
+const AC = window.AudioContext || window.webkitAudioContext;
+
+console.log(AC);
 
 export default class Player extends EventEmitter {
   constructor() {
     super();
-    this.context = new AudioContext();
+    this.context = new AC();
 
     /* sounds */
     this.sounds = [];
@@ -26,18 +30,22 @@ export default class Player extends EventEmitter {
     this.loadSounds();
   }
 
-  async loadSounds() {
-    this.buffers.background = await fetch(backgroundSound).then(r => r.arrayBuffer()).then(r => this.context.decodeAudioData(r));
-
-    this.ready = true;
-    this.emit('ready', this.ready);
+  loadSounds() {
+    fetch(backgroundSound).then(r => r.arrayBuffer()).then(r => this.context.decodeAudioData(r, data => {
+      console.log('hey', this, data);
+      this.buffers.background = data;
+      this.ready = true;
+      this.emit('ready', this.ready);
+    }, err => {
+      console.log('error', err);
+    }));
   }
 
   start() {
     this.playing = true;
     this.emit('playing', this.playing);
 
-    this.background = new AudioBufferSourceNode(this.context);
+    this.background = this.context.createBufferSource();
     this.background.buffer = this.buffers.background;
     this.background.loopStart = 4;
     this.background.loopEnd = 4 * 5;
@@ -49,6 +57,8 @@ export default class Player extends EventEmitter {
   }
 
   toggle() {
+    console.log('start sounds');
+
     if (this.muted) {
       if (!this.playing) {
         this.start();
@@ -56,7 +66,7 @@ export default class Player extends EventEmitter {
       /* unmute fade */
       this.mixer.gain.setTargetAtTime(1, this.context.currentTime, 3);
     } else {
-      this.mixer.gain.setTargetAtTime(0.001, this.context.currentTime, 0.5);
+      this.mixer.gain.setTargetAtTime(0.00, this.context.currentTime, 0.5);
     }
 
     this.muted = !this.muted;
