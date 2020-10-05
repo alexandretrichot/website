@@ -3,8 +3,6 @@ import backgroundSound from '../../assets/sounds/background.mp3';
 
 const AC = window.AudioContext || window.webkitAudioContext;
 
-console.log(AC);
-
 export default class Player extends EventEmitter {
   constructor() {
     super();
@@ -32,12 +30,11 @@ export default class Player extends EventEmitter {
 
   loadSounds() {
     fetch(backgroundSound).then(r => r.arrayBuffer()).then(r => this.context.decodeAudioData(r, data => {
-      console.log('hey', this, data);
       this.buffers.background = data;
       this.ready = true;
       this.emit('ready', this.ready);
     }, err => {
-      console.log('error', err);
+      console.error(err);
     }));
   }
 
@@ -57,8 +54,6 @@ export default class Player extends EventEmitter {
   }
 
   toggle() {
-    console.log('start sounds');
-
     if (this.muted) {
       if (!this.playing) {
         this.start();

@@ -7,10 +7,7 @@ export default {
     };
   },
   mounted() {
-    this.$player.on("ready", (r) => {
-      console.log('hey !!!');
-      this.playerReady = r;
-    });
+    this.$player.on("ready", (r) => (this.playerReady = r));
     this.$player.on("muted", (m) => (this.active = !m));
   },
   methods: {
@@ -41,7 +38,7 @@ export default {
   border: none;
   opacity: 0.5;
 
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 
   .bars {
     display: flex;
