@@ -21,10 +21,10 @@ export default {
 		{ src: "~/plugins/cursor.js", ssr: false },
 		{ src: "~/plugins/player", ssr: false },
 		"~/plugins/fontawesome",
-		{ src: "~/plugins/stats", ssr: false },
+		{ src: "~/plugins/app", ssr: false },
 	],
 	modules: [
-		'@nuxtjs/pwa',
+		'@nuxtjs/pwa'
 	],
 	pageTransition: {
 		mode: 'out-in',

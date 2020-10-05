@@ -59,7 +59,7 @@ export default class Player extends EventEmitter {
         this.start();
       }
       /* unmute fade */
-      this.mixer.gain.setTargetAtTime(1, this.context.currentTime, 3);
+      this.mixer.gain.setTargetAtTime(.6, this.context.currentTime, 3);
     } else {
       this.mixer.gain.setTargetAtTime(0.00, this.context.currentTime, 0.5);
     }

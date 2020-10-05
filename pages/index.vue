@@ -14,11 +14,6 @@ export default {
     <section class="landing">
       <hello />
     </section>
-
-    <!-- SOCIAL / CONTACT -->
-    <section class="contact">
-      <h2>Hit me on</h2>
-    </section>
   </div>
 </template>
 <style lang="scss">

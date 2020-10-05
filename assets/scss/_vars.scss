@@ -1,8 +1,7 @@
 :root {
-  --bg-color: black;
-  --accent-color: white;
-  --text-color: white;
-  --k-color: var(--text-color);
+  --bg-color: hsl(138, 5%, 70%);
+  --accent-color: hsl(138, 60%, 50%);
+  --text-color: #000;//#d0e0d5
   --light-shadow: 0 5px 10px #00000099;
   --clip-size: .5rem;
   --clip: polygon(var(--clip-size) 0%, calc(100% - var(--clip-size)) 0%, 100% var(--clip-size), 100% calc(100% - var(--clip-size)), calc(100% - var(--clip-size)) 100%, var(--clip-size) 100%, 0% calc(100% - var(--clip-size)), 0% var(--clip-size));

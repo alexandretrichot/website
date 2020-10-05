@@ -5,3 +5,14 @@
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+
+// menu
+
+.menu-enter-active, .menu-leave-active {
+  clip-path: circle(150% at calc(100% - 1.75rem) 1.75rem);
+  transition: clip-path .5s;
+}
+
+.menu-enter, .menu-leave-to {
+  clip-path: circle(0 at calc(100% - 1.75rem) 1.75rem);
+}
