@@ -16,7 +16,7 @@ export default {
     </transition>
     <nav>
       <div class="left">
-        <nuxt-link to="/" class="site-name">Alexandre T</nuxt-link>
+        <nuxt-link to="/" class="site-name">Alexandre TRICHOT</nuxt-link>
       </div>
       <div class="right">
         <font-awesome-icon

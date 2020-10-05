@@ -56,5 +56,10 @@ export default {
       transition: opacity 3s;
     }
   }
+
+  @media (max-width: 500px) {
+    height: 75vw;
+    width: 75vw;
+  }
 }
 </style>
