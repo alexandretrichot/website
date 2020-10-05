@@ -20,7 +20,8 @@ export default {
 	plugins: [
 		{ src: "~/plugins/cursor.js", ssr: false },
 		{ src: "~/plugins/player", ssr: false },
-		"~/plugins/fontawesome"
+		"~/plugins/fontawesome",
+		{ src: "~/plugins/stats", ssr: false },
 	],
 	modules: [
 		'@nuxtjs/pwa',

@@ -17,7 +17,8 @@
     "@fortawesome/vue-fontawesome": "^2.0.0",
     "@nuxtjs/pwa": "^3.0.2",
     "eventemitter3": "^4.0.7",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "stats.js": "^0.17.0"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",
