@@ -1,28 +1,41 @@
 {
   "name": "alexandretrichot.fr",
-  "version": "0.2.0",
-  "description": "My web site",
-  "author": "Alexandre Trichot",
+  "version": "2.0.0-pre",
   "private": true,
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "deploy": "npm run build && firebase deploy"
-  },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.31",
-    "@fortawesome/free-solid-svg-icons": "^5.15.0",
-    "@fortawesome/vue-fontawesome": "^2.0.0",
-    "@nuxtjs/pwa": "^3.0.2",
-    "eventemitter3": "^4.0.7",
-    "nuxt": "^2.14.6",
-    "stats.js": "^0.17.0",
-    "three": "^0.121.1"
+    "@testing-library/jest-dom": "^5.11.8",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.6.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "node-sass": "^4.14.1",
-    "sass-loader": "^8.0.2"
+    "node-sass": "^4.14.1"
   }
 }
