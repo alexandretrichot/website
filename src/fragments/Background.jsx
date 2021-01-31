@@ -44,9 +44,7 @@ export default function Background(props) {
     let mouseX = 0, mouseY = 0;
 
     const update = () => {
-      const time = performance.now() * 0.0005;
-
-
+      //const time = performance.now() * 0.0005;
 
       // camera
       camera.position.set(
@@ -59,7 +57,7 @@ export default function Background(props) {
       renderer.render(scene, camera);
     };
 
-    const animate = (time) => {
+    const animate = () => {
       update();
       requestRef.current = requestAnimationFrame(animate);
     };
@@ -99,8 +97,4 @@ export default function Background(props) {
   console.log("render background");
 
   return <div className="Background" ref={container}></div>;
-}
-
-function randRad() {
-  return (Math.random() * 360 * Math.PI) / 180;
 }
