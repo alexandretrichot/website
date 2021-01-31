@@ -1,8 +1,6 @@
-import "./Landing.scss";
-
 export default function Landing() {
   return (
-    <div className="Landing">
+    <div className="flex">
       <h1>Hey you !</h1>
     </div>
   );

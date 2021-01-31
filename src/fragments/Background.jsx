@@ -1,8 +1,6 @@
 import React from "react";
 import * as THREE from "three";
 
-import "./Background.scss";
-
 export default function Background(props) {
   const container = React.useRef();
   const requestRef = React.useRef();
