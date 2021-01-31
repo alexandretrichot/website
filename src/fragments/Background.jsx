@@ -3,11 +3,6 @@ import * as THREE from "three";
 
 import "./Background.scss";
 
-const params = {
-  blobSpikes: 0.3,
-  blobIntensity: 0.3,
-};
-
 export default function Background(props) {
   const container = React.useRef();
   const requestRef = React.useRef();
