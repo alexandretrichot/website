@@ -1,0 +1,12 @@
+.AppBar {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+
+  position: sticky;
+  top: 0;
+  height: 4rem;
+  overflow: hidden;
+  z-index: 100;
+}

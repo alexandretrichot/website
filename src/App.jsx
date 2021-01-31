@@ -1,23 +1,26 @@
-import './App.scss';
+import "./App.scss";
 
-function App() {
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import AppBar from "./fragments/AppBar";
+import Background from "./fragments/Background";
+
+import HomePage from "./pages/Home";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppBar />
+      {/* <Background /> */}
+
+      <div>
+        <Switch>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
-
-export default App;
