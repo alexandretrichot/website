@@ -27,9 +27,7 @@ function init() {
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.domElement.style.margin = "20px";
-  renderer.domElement.style.width = "calc(100% - 40px)";
-  document.body.appendChild(renderer.domElement);
+  document.getElementById('background').appendChild(renderer.domElement);
 
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.target.set(0, 0, 0);
