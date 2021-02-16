@@ -1,6 +1,5 @@
 import ScrollReveal from "scrollreveal";
-import * as THREE from "three";
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import Background from "./Background";
 
 ScrollReveal().reveal(".reveal", {
   interval: 100,
@@ -8,47 +7,11 @@ ScrollReveal().reveal(".reveal", {
   distance: "30px",
 });
 
-let camera, scene, renderer;
+const background = new Background(document.getElementById('background'));
 
-init();
-animate();
+window.addEventListener('resize', background.resize.bind(background));
+window.addEventListener('scroll', () => background.scroll());
 
-function init() {
-  camera = new THREE.PerspectiveCamera(
-    45,
-    window.innerWidth / window.innerHeight,
-    1,
-    10000
-  );
-  camera.position.set(0, -400, 600);
-
-  scene = new THREE.Scene();
-
-  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.getElementById('background').appendChild(renderer.domElement);
-
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.target.set(0, 0, 0);
-  controls.update();
-
-  window.addEventListener("resize", onWindowResize);
-} // end init
-
-function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-
-  renderer.setSize(window.innerWidth, window.innerHeight);
-}
-
-function animate() {
-  requestAnimationFrame(animate);
-
-  render();
-}
-
-function render() {
-  renderer.render(scene, camera);
-}
+background.resize();
+background.scroll();
+background.play();
