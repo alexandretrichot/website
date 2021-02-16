@@ -1,3 +1,4 @@
+@import "./reset.css";
 @import "./vars";
 
 $bg: #111111;
@@ -170,6 +171,7 @@ body {
   }
 }
 
+@import "./projects";
 @import "./background";
 @import "./landing";
 @import "./about";
