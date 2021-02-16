@@ -9,13 +9,9 @@ export default class TechnosSphere extends THREE.Object3D {
   private imVisible = new ImVisible(document.getElementById('about'), {
     beforeOffset: -50,
     afterOffset: -50,
-
     fadeIn: 100,
     fadeOut: 150,
-
     trigger: window.innerHeight / 2,
-
-    //debug: true
   });
 
   private zPos = new Smooter(-2);
