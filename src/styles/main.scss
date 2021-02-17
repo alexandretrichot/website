@@ -95,12 +95,12 @@ body {
 
 .title1,
 .title2,
-.title3 {
+.title3,
+.title4 {
   font-weight: 800;
-  //animation: fonts .5s alternate infinite;
 }
 
-.title1 {
+.title1, .text1 {
   line-height: normal;
   font-size: 4.5rem;
 
@@ -125,7 +125,7 @@ body {
   }
 }
 
-.title2 {
+.title2, .text2 {
   font-size: 2.5rem;
 
   .emoji {
@@ -133,7 +133,7 @@ body {
   }
 }
 
-.title3 {
+.title3, .text3 {
   font-size: 1.5rem;
 
   .emoji {
@@ -141,11 +141,11 @@ body {
   }
 }
 
-.text2 {
-  font-size: 2rem;
+.title4, .text4 {
+  font-size: 1.2rem;
 
   .emoji {
-    height: 2rem;
+    height: 1.2rem;
   }
 }
 

@@ -1,4 +1,35 @@
 #projects {
+  .project {
+    header {
+
+      .device {
+        width: 100%;
+
+      }
+
+      @include medium {
+        display: flex;
+        align-items: center;
+
+        .device {
+          width: 50%;
+        }
+      }
+    }
+
+    .technos {
+      //background-color: aquamarine;
+
+      .techno {
+        display: inline-block;
+        height: 1.5rem;
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
 
   #last_project {
     .box {

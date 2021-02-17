@@ -3,7 +3,8 @@ import Smooter from "./Smoother";
 import TechnosSphere from "./TechnosSphere";
 
 const raf = requestAnimationFrame || webkitRequestAnimationFrame;
-const caf = cancelAnimationFrame || webkitCancelAnimationFrame;
+
+const supportTouch = typeof window.ontouchstart !== "undefined";
 
 export default class Background {
   private requestedFrameId: number;
@@ -34,12 +35,19 @@ export default class Background {
 
     this.scene.add(this.technosSphere);
 
+    this.scene.translateZ(-2);
+
     this.resize();
 
-    window.addEventListener('mousemove', (ev: MouseEvent) => {
-      this.mouseX.value = (ev.clientX * 2 - window.innerWidth) / window.innerWidth;
-      this.mouseY.value = (ev.clientY * 2 - window.innerHeight) / window.innerHeight;
-    });
+    if (!supportTouch) {
+      window.addEventListener('mousemove', (ev: MouseEvent) => {
+        this.mouseX.value = (ev.clientX * 2 - window.innerWidth) / window.innerWidth;
+        this.mouseY.value = (ev.clientY * 2 - window.innerHeight) / window.innerHeight;
+      });
+    }
+
+    // start animation
+    raf(this.render.bind(this));
   }
 
   resize() {
@@ -64,13 +72,5 @@ export default class Background {
     this.camera.position.set(this.mouseX.value * -.2, this.mouseY.value * .2, this.camera.position.z);
 
     this.renderer.render(this.scene, this.camera);
-  }
-
-  play() {
-    this.requestedFrameId = raf(this.render.bind(this));
-  }
-
-  stop() {
-    caf(this.requestedFrameId);
   }
 }

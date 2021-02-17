@@ -14,7 +14,7 @@ export default class TechnosSphere extends THREE.Object3D {
     trigger: window.innerHeight / 2,
   });
 
-  private zPos = new Smooter(-2);
+  private zPos = new Smooter(0);
 
   constructor() {
     super();
@@ -68,7 +68,7 @@ export default class TechnosSphere extends THREE.Object3D {
   }
 
   scroll() {
-    this.zPos.value = this.imVisible.value * 2 - 2;
+    this.zPos.value = this.imVisible.value * 2;
   }
 
   resize() {
