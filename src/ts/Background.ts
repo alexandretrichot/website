@@ -7,10 +7,8 @@ const raf = requestAnimationFrame || webkitRequestAnimationFrame;
 const supportTouch = typeof window.ontouchstart !== "undefined";
 
 export default class Background {
-  private requestedFrameId: number;
-
   private renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  private camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, .01, 50);
+  private camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, .01, 3.8);
   private scene = new THREE.Scene();
 
   private mouseX = new Smooter(0);
@@ -65,7 +63,7 @@ export default class Background {
   private render() {
     const time = performance.now();
 
-    this.requestedFrameId = raf(this.render.bind(this));
+    raf(this.render.bind(this));
 
     this.technosSphere.render(time);
 

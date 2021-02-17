@@ -1,7 +1,7 @@
 @import "./reset.css";
 @import "./vars";
 
-$bg: #111111;
+$bg: #111;
 $textColor: #f6f6f6;
 $titleColor: #f6f6f6;
 
@@ -100,18 +100,23 @@ body {
   font-weight: 800;
 }
 
+.emoji, .icon {
+  height: 1rem;
+  display: inline-block;
+}
+
 .title1, .text1 {
   line-height: normal;
   font-size: 4.5rem;
 
-  .emoji {
+  .emoji, .icon {
     height: 4.5rem;
   }
 
   @include medium {
     font-size: 7rem;
 
-    .emoji {
+    .emoji, .icon {
       height: 7rem;
     }
   }
@@ -119,7 +124,7 @@ body {
   @include large {
     font-size: 8rem;
 
-    .emoji {
+    .emoji, .icon {
       height: 8rem;
     }
   }
@@ -128,7 +133,7 @@ body {
 .title2, .text2 {
   font-size: 2.5rem;
 
-  .emoji {
+  .emoji, .icon {
     height: 2.5rem;
   }
 }
@@ -136,7 +141,7 @@ body {
 .title3, .text3 {
   font-size: 1.5rem;
 
-  .emoji {
+  .emoji, .icon {
     height: 1.5rem;
   }
 }
@@ -144,7 +149,7 @@ body {
 .title4, .text4 {
   font-size: 1.2rem;
 
-  .emoji {
+  .emoji, .icon {
     height: 1.2rem;
   }
 }
@@ -170,6 +175,8 @@ body {
     transform: rotate(-6deg);
   }
 }
+
+@import "./button";
 
 @import "./projects";
 @import "./background";
