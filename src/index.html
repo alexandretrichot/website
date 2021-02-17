@@ -43,16 +43,16 @@
     <section class="mt4 mb4" id="projects">
       <div class="wrapper">
         <h2 class="title2 mx2 mb1 reveal">My Projects</h2>
-        <div class="project mx2 reveal">
+        <div class="project mx2">
           <header class="mb2">
-            <div class="device mb2" id="p1"></div>
+            <div class="device mb2 reveal" id="p1"></div>
             <div>
-              <h3 class="title3 mb1">Simulateur d'impact numérique</h3>
-              <p>
+              <h3 class="title3 mb1 reveal">Simulateur d'impact numérique</h3>
+              <p class="reveal">
                 Simulateur de consommation électrique et d'émission de GES sur
                 l'utilisation de services en ligne.
               </p>
-              <div class="btns mt2">
+              <div class="btns mt2 reveal">
                 <a
                   class="btn"
                   href="https://github.com/alexandretrichot/digital-impact-simulator/"
@@ -80,7 +80,7 @@
                   <span>Visit</span>
                 </a>
               </div>
-              <div class="technos mt1">
+              <div class="technos mt1 reveal">
                 <span>Built with :</span>
                 <a
                   href="https://www.typescriptlang.org/"
@@ -174,19 +174,33 @@
     </section>
     <section id="contact" class="mt2">
       <div class="wrapper">
-        <div class="mx2 text-center invert-sheme corners py2">
-          <p class="text3">😯 Vous êtes toujours là ?</p>
-          <p>Nous pourions donc nous contacter !</p>
+        <div class="mx2 text-center invert-sheme corners py2 px1 reveal">
+          <p class="text3">
+            <img src="images/emojis/hushed-face.png" alt="" class="emoji" />
+            Vous êtes toujours là ?
+          </p>
+          <p>Nous pourions nous contacter !</p>
 
-          <p class="mt2">Laissez-moi un mail sur</p>
           <div class="btns mt1 center">
             <a href="mailto:contact@alexandretrichot.fr" class="btn">
-              <span>📩</span>
-              <span>contact@alexandretrichot.fr</span></a>
+              <img src="images/emojis/envelope.png" alt="" class="emoji" />
+              <span>contact@alexandretrichot.fr</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
+    <footer id="footer" class="mt4 px2 py2">
+      <div class="small">© 2021 - Alexandre TRICHOT</div>
+      <a
+        href="https://github.com/alexandretrichot/"
+        target="_blank"
+        rel="nofollow noreferrer"
+        class="text3"
+      >
+        <img src="images/techno/github.svg" alt="GitHub" class="icon" />
+      </a>
+    </footer>
     <script src="./ts/index.ts"></script>
   </body>
 </html>

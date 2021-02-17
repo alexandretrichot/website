@@ -33,7 +33,7 @@ body {
 }
 
 .corners {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .reveal {
@@ -189,6 +189,15 @@ body {
   }
 }
 
+.small {
+  font-size: 0.8rem;
+
+  .emoji,
+  .icon {
+    height: 0.8rem;
+  }
+}
+
 .emoji {
   display: inline-block;
   height: 1rem;
@@ -198,6 +207,12 @@ body {
 .waving-hand-emoji {
   animation: waving-hand 2s 1s infinite;
   transform: rotate(-6deg);
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @keyframes waving-hand {
