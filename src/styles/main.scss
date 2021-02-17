@@ -27,6 +27,15 @@ body {
   //position: absolute;
 }
 
+.invert-sheme {
+  background-color: #fff;
+  color: $bg;
+}
+
+.corners {
+  border-radius: .5rem;
+}
+
 .reveal {
   visibility: hidden;
 }
@@ -44,6 +53,21 @@ body {
 .mx2 {
   margin-right: 2rem;
   margin-left: 2rem;
+}
+
+.px1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.px2 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .mt1 {
@@ -100,23 +124,27 @@ body {
   font-weight: 800;
 }
 
-.emoji, .icon {
+.emoji,
+.icon {
   height: 1rem;
   display: inline-block;
 }
 
-.title1, .text1 {
+.title1,
+.text1 {
   line-height: normal;
   font-size: 4.5rem;
 
-  .emoji, .icon {
+  .emoji,
+  .icon {
     height: 4.5rem;
   }
 
   @include medium {
     font-size: 7rem;
 
-    .emoji, .icon {
+    .emoji,
+    .icon {
       height: 7rem;
     }
   }
@@ -124,32 +152,39 @@ body {
   @include large {
     font-size: 8rem;
 
-    .emoji, .icon {
+    .emoji,
+    .icon {
       height: 8rem;
     }
   }
 }
 
-.title2, .text2 {
+.title2,
+.text2 {
   font-size: 2.5rem;
 
-  .emoji, .icon {
+  .emoji,
+  .icon {
     height: 2.5rem;
   }
 }
 
-.title3, .text3 {
+.title3,
+.text3 {
   font-size: 1.5rem;
 
-  .emoji, .icon {
+  .emoji,
+  .icon {
     height: 1.5rem;
   }
 }
 
-.title4, .text4 {
+.title4,
+.text4 {
   font-size: 1.2rem;
 
-  .emoji, .icon {
+  .emoji,
+  .icon {
     height: 1.2rem;
   }
 }
