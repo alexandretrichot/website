@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 
@@ -7,6 +8,8 @@ const raf = requestAnimationFrame || webkitRequestAnimationFrame;
 export default class Project {
   private renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   private camera = new THREE.PerspectiveCamera(45, 1, .01, 50);
+  private controls = new OrbitControls(this.camera, this.renderer.domElement);
+
   private scene = new THREE.Scene();
 
   private pointLight = new THREE.PointLight('white', 1);
@@ -24,13 +27,19 @@ export default class Project {
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.container.appendChild(this.renderer.domElement);
 
-    this.camera.position.set(0, 0, 3);
+    this.camera.position.set(0, 0, 1.2);
+    this.controls.enablePan = false;
+		this.controls.enableZoom = false; 
+		this.controls.enableDamping = true;
+		this.controls.minPolarAngle = 0.8;
+		this.controls.maxPolarAngle = 2.4;
+		this.controls.dampingFactor = 0.2;
+		this.controls.rotateSpeed = 1;
+
     this.scene.fog = new THREE.Fog("#111111", 1, 4);
 
-    this.pointLight.position.set(1, 2, 5);
-    this.scene.add(this.pointLight);
-
-    this.scene.add(this.group);
+    this.scene.add(this.pointLight, this.group);
+    this.scene.rotation.set(-.6, .3, .3);
 
     this.load();
 
@@ -85,9 +94,6 @@ export default class Project {
 
       this.group.add(plane);
     });
-
-    this.group.rotation.set(-.6, .3, .3);
-    this.group.position.z = 2;
   }
 
   resize() {
@@ -101,6 +107,8 @@ export default class Project {
 
     this.group.position.y = Math.sin(time * .001) * .03 + .05;
 
+    this.controls.update();
+    this.pointLight.position.copy(this.camera.position);
     this.renderer.render(this.scene, this.camera);
   }
 }
