@@ -60,9 +60,15 @@ export default class TechnosSphere extends THREE.Object3D {
       require('../images/techno/javascript.svg'),
     ];
 
+    console.log(technos);
+
     technos.forEach((url, index) => new THREE.TextureLoader().load(url, texture => {
+      document.getElementById('hidden').appendChild(texture.image);
       const plane = new THREE.Mesh(new THREE.PlaneGeometry(.15, .15 * texture.image.height / texture.image.width), new THREE.MeshLambertMaterial({ map: texture, transparent: true }));
+      //const plane = new THREE.Mesh(new THREE.PlaneGeometry(.15, .15), new THREE.MeshNormalMaterial());
+      //const plane = new THREE.Mesh(new THREE.BoxGeometry(.15, .15, .15), new THREE.MeshLambertMaterial({ map: texture, transparent: true }));
       plane.position.set(vertices[index][0], vertices[index][1], vertices[index][2]);
+      console.log(plane.position);
       this.images.add(plane);
     }));
   }
