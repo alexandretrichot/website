@@ -3,8 +3,6 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 
-const raf = requestAnimationFrame || webkitRequestAnimationFrame;
-
 export default class Project {
   private renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   private camera = new THREE.PerspectiveCamera(45, 1, .01, 50);
@@ -45,7 +43,7 @@ export default class Project {
 
     this.resize();
 
-    raf(this.render.bind(this));
+    requestAnimationFrame(this.render.bind(this));
   }
 
   private load() {
@@ -102,7 +100,7 @@ export default class Project {
   }
 
   render() {
-    raf(this.render.bind(this));
+    requestAnimationFrame(this.render.bind(this));
     const time = performance.now();
 
     this.group.position.y = Math.sin(time * .001) * .03 + .05;

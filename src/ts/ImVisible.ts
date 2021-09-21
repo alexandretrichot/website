@@ -1,26 +1,27 @@
 type Params = {
-  trigger?: number,
-  beforeOffset?: number,
-  afterOffset?: number,
-  debug?: boolean,
-  fadeIn?: number,
-  fadeOut?: number
+  trigger: number,
+  beforeOffset: number,
+  afterOffset: number,
+  debug: boolean,
+  fadeIn: number,
+  fadeOut: number
 }
 
 export default class ImVisible {
   private el: HTMLElement;
-  private params: Params = {
-    trigger: window.innerHeight / 2,
-    beforeOffset: 0,
-    afterOffset: 0,
-    debug: false,
-    fadeIn: 1,
-    fadeOut: 1,
-  };
+  private params: Params;
 
-  constructor(el: HTMLElement, params: Params) {
+  constructor(el: HTMLElement, params: Partial<Params>) {
     this.el = el;
-    this.setParams(params);
+    this.params = {
+      trigger: window.innerHeight / 2,
+      beforeOffset: 0,
+      afterOffset: 0,
+      debug: false,
+      fadeIn: 1,
+      fadeOut: 1,
+      ...params,
+    };
 
     if (this.params.debug) {
       createDebugElement(this.el.offsetTop - this.params.beforeOffset - this.params.fadeIn, this.el.clientHeight + this.params.beforeOffset + this.params.afterOffset + this.params.fadeIn + this.params.fadeOut, 'blue');
@@ -30,13 +31,6 @@ export default class ImVisible {
       debug.style.position = "fixed";
       debug.style.width = '20px';
     }
-  }
-
-  setParams(params: Params) {
-    this.params = {
-      ...this.params,
-      ...params
-    };
   }
 
   get visible() {

@@ -2,8 +2,6 @@ import * as THREE from "three";
 import Smooter from "./Smoother";
 import TechnosSphere from "./TechnosSphere";
 
-const raf = requestAnimationFrame || webkitRequestAnimationFrame;
-
 const supportTouch = typeof window.ontouchstart !== "undefined";
 
 export default class Background {
@@ -45,7 +43,7 @@ export default class Background {
     }
 
     // start animation
-    raf(this.render.bind(this));
+    requestAnimationFrame(this.render.bind(this));
   }
 
   resize() {
@@ -63,7 +61,7 @@ export default class Background {
   private render() {
     const time = performance.now();
 
-    raf(this.render.bind(this));
+    requestAnimationFrame(this.render.bind(this));
 
     this.technosSphere.render(time);
 

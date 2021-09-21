@@ -6,7 +6,7 @@ export default class TechnosSphere extends THREE.Object3D {
   private center = new THREE.Mesh(new THREE.IcosahedronGeometry(.7, 2), new THREE.MeshLambertMaterial({ wireframe: true }))
   private images = new THREE.Object3D();
 
-  private imVisible = new ImVisible(document.getElementById('about'), {
+  private imVisible = new ImVisible(document.getElementById('about')!, {
     beforeOffset: -50,
     afterOffset: -50,
     fadeIn: 100,
@@ -45,31 +45,30 @@ export default class TechnosSphere extends THREE.Object3D {
       [-a, -b, 0,],
     ];
 
-    const technos: string[] = [
-      require('../images/techno/graphql.svg'),
-      require('../images/techno/mongodb.svg'),
-      require('../images/techno/nextjs.svg'),
-      require('../images/techno/nodejs.svg'),
-      require('../images/techno/nuxtjs.svg'),
-      require('../images/techno/reactjs.svg'),
-      require('../images/techno/sass.svg'),
-      require('../images/techno/typescript.svg'),
-      require('../images/techno/vercel.svg'),
-      require('../images/techno/vuejs.svg'),
-      require('../images/techno/github.svg'),
-      require('../images/techno/javascript.svg'),
+    const technos: Promise<any>[] = [
+      import('../images/techno/graphql.svg?url'),
+      import('../images/techno/mongodb.svg?url'),
+      import('../images/techno/nextjs.svg?url'),
+      import('../images/techno/nodejs.svg?url'),
+      import('../images/techno/nuxtjs.svg?url'),
+      import('../images/techno/reactjs.svg?url'),
+      import('../images/techno/sass.svg?url'),
+      import('../images/techno/typescript.svg?url'),
+      import('../images/techno/vercel.svg?url'),
+      import('../images/techno/vuejs.svg?url'),
+      import('../images/techno/github.svg?url'),
+      import('../images/techno/javascript.svg?url'),
     ];
 
-    console.log(technos);
-
-    technos.forEach((url, index) => new THREE.TextureLoader().load(url, texture => {
-      document.getElementById('hidden').appendChild(texture.image);
-      const plane = new THREE.Mesh(new THREE.PlaneGeometry(.15, .15 * texture.image.height / texture.image.width), new THREE.MeshLambertMaterial({ map: texture, transparent: true }));
-      //const plane = new THREE.Mesh(new THREE.PlaneGeometry(.15, .15), new THREE.MeshNormalMaterial());
-      //const plane = new THREE.Mesh(new THREE.BoxGeometry(.15, .15, .15), new THREE.MeshLambertMaterial({ map: texture, transparent: true }));
-      plane.position.set(vertices[index][0], vertices[index][1], vertices[index][2]);
-      console.log(plane.position);
-      this.images.add(plane);
+    Promise.all(technos).then(modules => modules.map(m => m.default).forEach((url, index) => {
+      new THREE.TextureLoader().load(url, texture => {
+        document.getElementById('hidden')!.appendChild(texture.image);
+        const plane = new THREE.Mesh(new THREE.PlaneGeometry(.15, .15 * texture.image.height / texture.image.width), new THREE.MeshLambertMaterial({ map: texture, transparent: true }));
+        //const plane = new THREE.Mesh(new THREE.PlaneGeometry(.15, .15), new THREE.MeshNormalMaterial());
+        //const plane = new THREE.Mesh(new THREE.BoxGeometry(.15, .15, .15), new THREE.MeshLambertMaterial({ map: texture, transparent: true }));
+        plane.position.set(vertices[index][0], vertices[index][1], vertices[index][2]);
+        this.images.add(plane);
+      })
     }));
   }
 
