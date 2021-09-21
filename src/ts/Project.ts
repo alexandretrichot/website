@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
+import { MathUtils } from 'three';
 
 export default class Project {
   private renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -29,8 +30,8 @@ export default class Project {
     this.controls.enablePan = false;
 		this.controls.enableZoom = false; 
 		this.controls.enableDamping = true;
-		this.controls.minPolarAngle = 0.8;
-		this.controls.maxPolarAngle = 2.4;
+		this.controls.minPolarAngle = MathUtils.DEG2RAD * 90;
+		this.controls.maxPolarAngle = MathUtils.DEG2RAD * 90;
 		this.controls.dampingFactor = 0.2;
 		this.controls.rotateSpeed = 1;
 
