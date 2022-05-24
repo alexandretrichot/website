@@ -2,7 +2,7 @@ import ScrollReveal from "scrollreveal";
 import Background from "./Background";
 import Project from "./Project";
 
-import DISScreen from '../images/projects/digital-impact-simulator.png';
+import DISScreen from '../images/projects/digital-impact-simulator.webp';
 
 ScrollReveal().reveal(".reveal", {
   interval: 100,

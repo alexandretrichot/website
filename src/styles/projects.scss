@@ -1,10 +1,8 @@
 #projects {
   .project {
     header {
-
       .device {
         width: 100%;
-
       }
 
       @include medium {
@@ -18,8 +16,6 @@
     }
 
     .technos {
-      //background-color: aquamarine;
-
       .techno {
         display: inline-block;
         height: 1rem;
