@@ -5,6 +5,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Landing/>
+      <div className='h-96'></div>
     </>
   );
 };
