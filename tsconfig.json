@@ -1,26 +1,44 @@
 {
-	"compilerOptions": {
-		"target": "ESNext",
-		"useDefineForClassFields": true,
-		"module": "ESNext",
-		"lib": [
-			"ESNext",
-			"DOM"
-		],
-		"moduleResolution": "Node",
-		"strict": true,
-		"sourceMap": true,
-		"resolveJsonModule": true,
-		"esModuleInterop": true,
-		"noEmit": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noImplicitReturns": true,
-		"types": [
-			"vite-plugin-svgr/client"
-		]
-	},
-	"include": [
-		"./src"
-	]
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "declaration": false,
+        "experimentalDecorators": false,
+        "noEmitOnError": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "pretty": true,
+        "removeComments": false,
+        "sourceMap": false,
+        "verbatimModuleSyntax": true,
+        "outDir": "../../.moon/cache/types/apps/web",
+        "strict": true,
+        "esModuleInterop": true,
+        "emitDeclarationOnly": false,
+        "jsx": "react-jsx",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "lib": ["DOM", "DOM.Iterable", "ES2022"],
+        "isolatedModules": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "target": "ES2022",
+        "allowJs": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@liminal/shared": ["../../packages/shared/src/index.ts"],
+            "@liminal/shared/*": ["../../packages/shared/src/*"],
+            "@liminal/db": ["../../packages/db/src/index.ts"],
+            "@liminal/db/*": ["../../packages/db/src/*"],
+            "@liminal/registry": ["../../packages/registry/src/index.ts"],
+            "@liminal/registry/*": ["../../packages/registry/src/*"],
+            "@liminal/artifactory": ["../../packages/artifactory/src/index.ts"],
+            "@liminal/artifactory/*": ["../../packages/artifactory/src/*"]
+        }
+    },
+    "include": ["**/*.ts", "**/*.tsx"]
 }
