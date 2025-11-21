@@ -1,7 +1,6 @@
 /node_modules/
 /dist/
-/.tanstack/
-/.output/
+/.vercel/
 /.nitro/
 
 .DS_Store
