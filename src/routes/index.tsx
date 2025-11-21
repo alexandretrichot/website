@@ -1,9 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { HeroSection } from "../components/hero-section";
 
 export const Route = createFileRoute("/")({
     component: RouteComponent,
 });
 
 function RouteComponent() {
-    return <>Hello</>;
+    return (
+        <main className="min-h-screen">
+            <HeroSection />
+        </main>
+    );
 }
