@@ -1,8 +1,9 @@
+import { nitroV2Plugin } from "@tanstack/nitro-v2-vite-plugin";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import tsConfigPaths from "vite-tsconfig-paths";
-import { nitroV2Plugin } from "@tanstack/nitro-v2-vite-plugin";
 
 export default defineConfig({
     server: {
@@ -11,5 +12,5 @@ export default defineConfig({
     build: {
         sourcemap: true,
     },
-    plugins: [tsConfigPaths(), tanstackStart(), nitroV2Plugin({ preset: "node-server" }), viteReact()],
+    plugins: [ViteImageOptimizer(), tsConfigPaths(), tanstackStart(), nitroV2Plugin({ preset: "node-server" }), viteReact()],
 });

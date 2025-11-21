@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useRef, useState } from "react";
-import profile from "../images/profile.png";
+import profileImageUrl from "../images/profile.webp";
 
 export function ProfileCard3D() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -43,7 +43,7 @@ export function ProfileCard3D() {
                         transform: "translateZ(0px)",
                     }}
                 >
-                    <img src={profile} alt="profil Alexandre TRICHOT" className="w-full h-full object-cover" />
+                    <img src={profileImageUrl} alt="profil Alexandre TRICHOT" className="w-full h-full object-cover" />
 
                     {/* Edge glow */}
                     <div className="absolute inset-0 rounded-3xl shadow-[inset_0_0_30px_rgba(255,150,50,0.1)] pointer-events-none" />
