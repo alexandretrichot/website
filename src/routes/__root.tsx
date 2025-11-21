@@ -24,12 +24,48 @@ export const Route = createRootRoute({
                 content: "Alexandre TRICHOT — Architecte logiciel, entrepreneur tech & créatif. Construire des produits qui durent, mettre la technologie au service du sens.",
             },
             {
+                property: "og:url",
+                content: "https://alexandretrichot.fr",
+            },
+            {
+                property: "og:type",
+                content: "url",
+            },
+            {
                 property: "og:title",
                 content: "Alexandre TRICHOT — Architecte Logiciel & Entrepreneur Tech",
             },
             {
                 property: "og:description",
                 content: "Construire des produits qui durent, mettre la technologie au service du sens.",
+            },
+            {
+                property: "og:image",
+                content: "/og-image.jpg",
+            },
+            {
+                property: "twitter:card",
+                content: "summary_large_image",
+            },
+            {
+                property: "twitter:domain",
+                content: "alexandretrichot.fr",
+            },
+            {
+                property: "twitter:url",
+                content: "https://alexandretrichot.fr",
+            },
+            {
+                property: "twitter:title",
+                content: "Alexandre TRICHOT — Architecte Logiciel & Entrepreneur Tech",
+            },
+            {
+                property: "twitter:description",
+                content: "Alexandre TRICHOT — Architecte logiciel, entrepreneur tech & créatif. Construire des produits qui durent, mettre la technologie au service du sens.",
+            },
+            {
+                property: "twitter:image",
+                content: "/og-image.jpg",
             },
         ],
         links: [
