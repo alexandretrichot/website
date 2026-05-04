@@ -27,8 +27,7 @@ export function HeroSection() {
 
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }} className="text-center md:text-left space-y-6">
                         <p className="mx-auto max-w-lg text-lg leading-relaxed text-white/50 md:mx-0">
-                            Architecte logiciel et entrepreneur tech, je conçois des produits SaaS et IA générative robustes, utiles et durables, en alignant technologie, métier et responsabilité
-                            humaine.
+                            AI Engineer, 6 ans d'expérience produit. Je conçois des agents experts avec les bons outils et le bon niveau d'intégration pour maximiser la valeur métier. Rust, TypeScript, du worker GPU au pixel React.
                         </p>
                         {/* <a
                             href="#vision"

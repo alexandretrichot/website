@@ -17,11 +17,11 @@ export const Route = createRootRoute({
                 content: "width=device-width, initial-scale=1",
             },
             {
-                title: "Alexandre TRICHOT — Architecte Logiciel & Entrepreneur Tech",
+                title: "Alexandre TRICHOT — AI Engineer",
             },
             {
                 name: "description",
-                content: "Alexandre TRICHOT — Architecte logiciel, entrepreneur tech & créatif. Construire des produits qui durent, mettre la technologie au service du sens.",
+                content: "AI Engineer, 6 ans d'expérience produit. Agents experts, agentic search, parsing documentaire. Rust, TypeScript, du worker GPU au pixel React.",
             },
             {
                 property: "og:url",
@@ -33,11 +33,11 @@ export const Route = createRootRoute({
             },
             {
                 property: "og:title",
-                content: "Alexandre TRICHOT — Architecte Logiciel & Entrepreneur Tech",
+                content: "Alexandre TRICHOT — AI Engineer",
             },
             {
                 property: "og:description",
-                content: "Construire des produits qui durent, mettre la technologie au service du sens.",
+                content: "AI Engineer, 6 ans d'expérience produit. Agents experts, agentic search, parsing documentaire. Rust, TypeScript, du worker GPU au pixel React.",
             },
             {
                 property: "og:image",
@@ -57,11 +57,11 @@ export const Route = createRootRoute({
             },
             {
                 property: "twitter:title",
-                content: "Alexandre TRICHOT — Architecte Logiciel & Entrepreneur Tech",
+                content: "Alexandre TRICHOT — AI Engineer",
             },
             {
                 property: "twitter:description",
-                content: "Alexandre TRICHOT — Architecte logiciel, entrepreneur tech & créatif. Construire des produits qui durent, mettre la technologie au service du sens.",
+                content: "AI Engineer, 6 ans d'expérience produit. Agents experts, agentic search, parsing documentaire. Rust, TypeScript, du worker GPU au pixel React.",
             },
             {
                 property: "twitter:image",
