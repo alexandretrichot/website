@@ -27,7 +27,8 @@ export function HeroSection() {
 
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.5 }} className="text-center md:text-left space-y-6">
                         <p className="mx-auto max-w-lg text-lg leading-relaxed text-white/50 md:mx-0">
-                            AI Engineer, 6 ans d'expérience produit. Je conçois des agents experts avec les bons outils et le bon niveau d'intégration pour maximiser la valeur métier. Rust, TypeScript, du worker GPU au pixel React.
+                            AI Engineer, 6 ans d'expérience produit. Je conçois des agents experts avec les bons outils et le bon niveau d'intégration pour maximiser la valeur métier. Rust,
+                            TypeScript, du worker GPU au pixel React.
                         </p>
                         {/* <a
                             href="#vision"
@@ -85,7 +86,7 @@ export function HeroSection() {
                     </a>
                 </motion.div>
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 1 }} className="text-sm font-medium text-white/40 tracking-wide">
-                    LYON, FRANCE
+                    Paris, France
                 </motion.div>
             </footer>
         </div>
